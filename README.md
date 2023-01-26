@@ -30,23 +30,31 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 #### Figure -02 FULL ADDER 
 
 ### Procedure
-
-Connect the supply (+5V) to the circuit
-Switch ON the main switch
-If the output is 1, then the led glows.
+##### 1.Use module projname(input,output) to start the Verilog programmming.
+##### 2.Assign inputs and outputs using the word input and output respectively.
+##### 3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
+##### 4.Use each output to represnt onre for differnce and the other for borrow.
+##### 5.End the verilog program using keyword endmodule.
 ### Program:
 /*
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
 ###### Developed by: Karna s 
 ###### RegisterNumber:22008977
 */
-#### HALF ADDER program:
 
-module fulladd (a,b,sum,carry); input a,b; output sum,carry; assign sum = (a^b); assign carry = (a&b); endmodule
 
-#### FULL ADDER program:
+### Half subtractor :
+###### module half_sub(output B,D, input x,y);
+###### assign D=x^y;
+###### assign B=~x&y;
+###### endmodule
 
-module fulladd (a,b,c,sum,carry); input a,b,c; output sum,carry; assign sum = (a^b^c); assign carry = ((a&b)|(a^b)&c); endmodule Logic symbol & Truthtable RTL realization
+### Full subtractor :
+###### module full_sub(output B,D, input x,y,z);
+###### assign D=x^y^z;
+###### assign B=(~x&(y^z))|(y&z);
+###### endmodule
+
 
 ### Output:
 ### RTL
