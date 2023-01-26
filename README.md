@@ -43,17 +43,7 @@ Program to design a half adder and full adder circuit and verify its truth table
 */
 
 
-### Half subtractor :
-###### module half_sub(output B,D, input x,y);
-###### assign D=x^y;
-###### assign B=~x&y;
-###### endmodule
-
-### Full subtractor :
-###### module full_sub(output B,D, input x,y,z);
-###### assign D=x^y^z;
-###### assign B=(~x&(y^z))|(y&z);
-###### endmodule
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/121109150/214820497-7a8c90b2-42b5-4a3f-b4bb-d32aa91360ae.png">
 
 
 ### Output:
