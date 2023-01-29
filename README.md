@@ -30,44 +30,57 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 #### Figure -02 FULL ADDER 
 
 ### Procedure
-##### 1.Use module projname(input,output) to start the Verilog programmming.
-##### 2.Assign inputs and outputs using the word input and output respectively.
-##### 3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression.
-##### 4.Use each output to represnt onre for differnce and the other for borrow.
-##### 5.End the verilog program using keyword endmodule.
+##### Connect the supply (+5V) to the circuit Switch ON the main switch If the output is 1, then the led glows.
 ### Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-###### Developed by: Karna s 
-###### RegisterNumber:22008977
-*/
-
-
-<img width="599" alt="image" src="https://user-images.githubusercontent.com/121109150/214820497-7a8c90b2-42b5-4a3f-b4bb-d32aa91360ae.png">
-
-
-### Output:
-### RTL
-HALF ADDER:
-![image](https://user-images.githubusercontent.com/121109150/214809593-0af26fb6-61b8-485e-b50b-146d4ef96e5b.png)
-FULL ADDER:
-![image](https://user-images.githubusercontent.com/121109150/214809694-940c45d9-11e9-4d32-82ee-0c2c427d6c10.png)
-
-### TIMING DIAGRAM
-HALF ADDER:
- 
- 
- ![image](https://user-images.githubusercontent.com/121109150/214809841-a774c2ca-469e-421a-aa44-0864ab8853f3.png)
-
-FULL ADDER:
-![image](https://user-images.githubusercontent.com/121109150/214809953-fa1d5d8f-b8ee-437d-a576-997571c40485.png)
-
-### TRUTH TABLE 
+```
+ Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+ Developed by: Karna s 
+ RegisterNumber:22008977
+```
 ##### HALF ADDER:
-![image](https://user-images.githubusercontent.com/121109150/214810065-3e5b3ebc-1d46-4ff0-9639-6a302522d85a.png)
+```
+module half_adder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+assign sum = (a^b);
+assign carry = (a&b);
+endmodule
+```
+##### FULL ADDER:
+```
+module full_adder (a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = (a^b^c);
+assign carry = ((a&b)|(a^b)&c);
+endmodule
+```
+
+## Output:
+### LOGIC SYMBOL & TRUTH TABLE: 
+##### HALF ADDER:
+![image](https://user-images.githubusercontent.com/121109150/215317206-2fef6b9d-2d01-4dc2-8af7-96c0f3099b70.png)
 
 ##### FULL ADDER:
-![image](https://user-images.githubusercontent.com/121109150/214810125-82a7e27d-8ae9-4582-91fb-62906fe7c814.png)
+![image](https://user-images.githubusercontent.com/121109150/215317214-ef96138e-8baa-4f78-9e8d-0a1476847ec9.png)
+
+### RTL REALIZATION:
+##### HALF ADDER:
+![image](https://user-images.githubusercontent.com/121109150/215317250-f59c7c07-e024-40c2-83f6-2eda01072806.png)
+
+##### FULL ADDER:
+![image](https://user-images.githubusercontent.com/121109150/215317256-fb90d20b-2ccc-4aa6-9891-1471ceb88bcb.png)
+
+
+### TIMING DIAGRAM
+
+##### HALF ADDER:
+![image](https://user-images.githubusercontent.com/121109150/215317281-93b3d289-3b9a-448e-aa44-befb9726e2b2.png)
+
+
+##### FULL ADDER:
+![image](https://user-images.githubusercontent.com/121109150/215317297-b93ea9b7-4e64-4cb7-bfb4-27029d74f1c2.png)
+
 
 
 ### Result:
